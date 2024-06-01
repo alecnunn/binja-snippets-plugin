@@ -33,7 +33,7 @@ def update_snippets():
     log_info("Downloading from: %s" % url)
     source = download(url)
     zipPath = [s for s in source.split(b'\"') if s.endswith(b'.zip')]
-    if len(zipPath) != 1:
+    if len(zipPath) <= 1:
         log_error("Update failed.")
         return
     url = domain + zipPath[0]
